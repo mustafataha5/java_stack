@@ -63,7 +63,7 @@ public class CafeJava {
 
         System.out.println(generalGreeting + customer3);
         System.out.println("The  Total price of Latte : 1x"+dripPrice+" = "+dripPrice*1+"$");
-        System.out.println("We are sorry youe order  was  latte not coffe, the new total is 1x"+lattePice+" = "+lattePice+"$");
+        System.out.println("We are sorry youe order  was  latte not coffe, The diffrence between the  Prices "+(lattePice-dripPrice)+"$");
         if(isReadyOrder3){
             System.out.println(customer3+" "+readyMessage);
             
