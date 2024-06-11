@@ -15,17 +15,7 @@ public class AlfredQuotes{
         return "Good "+dayPeriod+" ,  "+ name+". Lovely to see you.";
     }
     public String guestGreeting(){
-        /*         <dayPeriodRule type = "earlyMorning" from="0:00" before="9:00"/>
-
-         <dayPeriodRule type = "morning" from="9:00" before="12:00"/>
-
-         <dayPeriodRule type = "noon" at = "12:00"/>
-
-         <dayPeriodRule type = "afternoon" after="12:00" before="17:00"/>
-
-         <dayPeriodRule type = "evening" from="17:00" before="21:00"/>
-
-         <dayPeriodRule type = "night" from="21:00" before="24:00"/> */
+       
         String dayPeriod = "" ; 
          Date now = new Date();
         SimpleDateFormat day = new SimpleDateFormat("HH") ;
@@ -59,8 +49,7 @@ public class AlfredQuotes{
     }
     
     public String respondBeforeAlexis(String conversation) {
-        // YOUR CODE HERE
-        String msg = "" ; 
+        // YOUR CODE HERE 
         int alex = conversation.indexOf("Alexis") ;
         if (alex >=0){  
             return  "Right away, sir. She certainly isn't sophisticated enough for that." ; 

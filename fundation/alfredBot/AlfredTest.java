@@ -36,5 +36,7 @@ public class AlfredTest {
         System.out.println(alfredBot.guestGreeting());
         System.out.println(alfredBot.isAngry("angry"));
         System.out.println(alfredBot.isAngry("happy"));
+
+        System.out.println(alfredBot.guestGreeting());
     }
 }
