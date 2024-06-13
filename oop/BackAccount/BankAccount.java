@@ -5,10 +5,8 @@ public class BankAccount {
     // MEMBER VARIABLES
     private double checkingBalance;
     private double savingsBalance;
-    private String accountNumber;
- 
+    private String accountNumber; 
     private static Set<String> accountNumbers = new HashSet<String>();
-
     private static int accounts;
     private static double totalMoney; 
 
@@ -77,7 +75,6 @@ public BankAccount(){
     private String randomizeAccountNumber(){
         int [] alpha = {0,1,2,3,4,5,6,7,8,9} ; 
         Random randMachine = new Random();
-    
         String account = "" ;                 
         for(int i=0;i<10;i++){
             account += alpha[randMachine.nextInt(10)] ; 
