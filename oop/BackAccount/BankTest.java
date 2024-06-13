@@ -8,10 +8,16 @@ public class BankTest {
         account2.depositAmount(2, 500);
         account3.depositAmount(1,1000);
 
+        account1.displayBalance();
+        System.out.println("---------------------------");
+        account2.displayBalance();
+        System.out.println("---------------------------");
+        account3.displayBalance();
+        System.out.println("---------------------------");
         account1.withdrawAmount(1, 50);
         account2.withdrawAmount(2, 100);
         account3.withdrawAmount(1, 400);
-        System.out.println(BankAccount.getTotalMoney());
+        System.out.println("Totla Balance: "+BankAccount.getTotalMoney());
         System.out.println("Total accounts:" + " "+ BankAccount.getAccounts());
         System.out.println(BankAccount.getAccountNumbers());
     }
