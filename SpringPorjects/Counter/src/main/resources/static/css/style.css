@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.container{
+	
+	display: flex ; 
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+h1{
+	
+	text-align: center;
+}
+h3{
+	margin: 20px;
+	text-align: center;
+}
+a{
+	color:#1c71d8;
+}
