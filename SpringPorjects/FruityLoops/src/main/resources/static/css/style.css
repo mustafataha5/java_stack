@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.mytitle{
+	color: #ee8080 ;
+}
+
+.myshadow{
+	border: 30px  solid #ffb6c2;
+	padding: 2px;
+}
+
+.green > *{
+	color:#c64600 ;
+}
