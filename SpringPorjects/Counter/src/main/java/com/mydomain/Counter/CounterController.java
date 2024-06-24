@@ -42,7 +42,7 @@ public class CounterController {
 	@RequestMapping("/reset")
 	public String resetConter(HttpSession session) {
 		session.removeAttribute("counter");
-		return "counter_template.jsp" ;
+		return  "redirect:/counter" ;
 	}
 	
 	
