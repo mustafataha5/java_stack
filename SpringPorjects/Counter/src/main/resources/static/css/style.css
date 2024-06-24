@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .container{
-	
+	margin-top:50px; 
 	display: flex ; 
 	justify-content: center;
 	text-align: center;
@@ -11,6 +11,9 @@
 h1{
 	
 	text-align: center;
+}
+h2{
+	margin: 10px 
 }
 h3{
 	margin: 20px;

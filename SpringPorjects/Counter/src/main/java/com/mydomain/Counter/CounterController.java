@@ -22,8 +22,28 @@ public class CounterController {
 		return "index.jsp" ;
 	}
 	
+	@RequestMapping("/Main2")
+	public String index2(HttpSession session) {
+		if(session.getAttribute("counter") == null) {
+				session.setAttribute("counter", 2) ;
+		}
+		else {
+			int counter =(int)session.getAttribute("counter");
+			counter+=2 ; 
+			session.setAttribute("counter", counter) ;
+		}
+		return "index2.jsp" ;
+	}
+	
 	@RequestMapping("/counter")
 	public String showCounter() {
 		return "counter_template.jsp" ;
 	}
+	@RequestMapping("/reset")
+	public String resetConter(HttpSession session) {
+		session.removeAttribute("counter");
+		return "counter_template.jsp" ;
+	}
+	
+	
 }
