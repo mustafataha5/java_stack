@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+#main_time{
+	
+	display: flex;
+	justify-content: center ; 
+	align-items: center;
+	margin-top: 200px;
+}
+
+h1{
+	margin : 5px  7px ; 
+	padding: 2px 5px;
+}
+
+a{
+	color: #468795 ;
+}
