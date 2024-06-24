@@ -1,0 +1,62 @@
+
+    <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-jasper</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>jakarta.servlet.jsp.jstl</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.glassfish.web</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    </dependency>
+
+
+### Bootstrap 
+  <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>webjars-locator</artifactId>
+        <version>0.46</version>
+    </dependency>
+    
+    <!-- BOOTSTRAP DEPENDENCIES -->
+    <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+
+
+
+
+
+----------------------------------------------------------------------
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+-------------------------------------------------------------------
+There are three minor configuration steps before we can pass data from our controller to the .jsp file:
+
+   1-  Create the src/main/webapp folder if it does not exist
+   2-  Create the src/main/webapp/WEB-INF folder
+   3-  Edit the src/main/resources/applications.properties file to contain the following code:
+
+                                    spring.mvc.view.prefix=/WEB-INF/
+
+Steps 1 and 2 create a webapp folder that the embedded Tomcat server will use to serve up your .jsp files. Step 3 will tell it to look in the /WEB-INF/ folder we just created to serve up our view files.
+
+
+
+
+
+
+
+
+
+
+
+
+
