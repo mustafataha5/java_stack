@@ -13,8 +13,7 @@
         <artifactId>jakarta.servlet.jsp.jstl</artifactId>
     </dependency>
 
-
-### Bootstrap 
+<!--BootSTRAP -->
   <dependency>
         <groupId>org.webjars</groupId>
         <artifactId>webjars-locator</artifactId>

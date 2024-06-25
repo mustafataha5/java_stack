@@ -1,27 +1,31 @@
-import java.util.ArrayList;
-import java.util.HashMap ;
-import java.util.PriorityQueue; 
+import javax.naming.directory.DirContext;
 
 class Solution {
-    public int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> minHeap
-            = new PriorityQueue<>();
- 
-        for (int num : nums) {
-            minHeap.add(num);
+    public ListNode deleteMiddle(ListNode head) {
+
+        ListNode middel ,current ;
+        current = head ; 
+        middel = head;
+
+        while(current !=null){
+            System.out.print(">>>> "+current);
+            if(current.next !=null && current.next.next !=null){
+                current = current.next.next ;
+            }
+            else{
+                current = current.next ;
+            }
+             
+            middel  = middel.next ; 
         }
-        int count = nums.length -1- k ; 
-        int top = 0 ; 
-        while (count > 0) {
-             top = minHeap.poll();
-            count--;
-        }
- 
-        return top; 
+        System.out.println("\n>>>> "+middel.val);
+       DirContext.getAttributes
         
-        
-        //  Arrays.sort(nums); 
-        //  return nums[nums.length-k];
+        return head ;
+    }
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1,null);
         
     }
 }

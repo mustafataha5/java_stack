@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.header{
+ display: flex;
+ justify-content: space-between;
+ margin: 30px;
+}
+.goal_div{
+	display: flex;
+	
+	
+}
+.goal{
+	border: solid 2px black;
+	width:max-content;
+	padding: 2px 10px; 
+	margin: 0 10px;
+}
+
+
+.myhr_color{
+	color: #9a9996 ;
+}
+
+.activity > div{
+	border: solid 2px black;
+	height: 10rem ;
+	overflow: scroll;
+}
+
+.win{
+	margin: 2px 10px ;
+	padding: 2px 5px;
+	color: green;
+}
+.failed{
+	margin: 2px 10px ;
+	padding: 2px 5px;
+	color:red;
+}
+
+
+
+
