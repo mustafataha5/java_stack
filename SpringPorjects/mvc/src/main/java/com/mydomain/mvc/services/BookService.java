@@ -40,8 +40,6 @@ public class BookService {
 		public Book updateBook(Long id ,String title, String desc,String lang,Integer numOfPages) {
 			Optional<Book> book = bookRepository.findById(id);
 			if( book.isPresent()) {
-				
-				System.out.println()
 				Book b = book.get();
 				b.setLanguage(lang);
 				b.setDescription(desc);
