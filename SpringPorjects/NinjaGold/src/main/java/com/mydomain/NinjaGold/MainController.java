@@ -32,7 +32,7 @@ public class MainController {
 		}
 		return "index.jsp";
 	}
-	@PostMapping("getRandom")
+	@PostMapping("/getRandom")
 	public String getRandom(@RequestParam(value="goldFrom") String goldFrom,
 							HttpSession session){
 		int rand = 0;

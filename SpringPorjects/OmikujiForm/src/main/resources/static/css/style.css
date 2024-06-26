@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.mybtn{
+	background-color: #1c71d8 ; 
+	border: solid 2px black;
+	box-shadow: 3px 3px black; 
+}
+
+.mybtn:hover{
+	color: #1c71d8 ;
+	background-color: black ; 
+}
+.myback{
+	background-color: #1c71d8 ;
+}
