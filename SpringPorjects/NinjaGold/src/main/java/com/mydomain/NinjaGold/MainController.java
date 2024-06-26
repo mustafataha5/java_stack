@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -24,6 +25,7 @@ import jakarta.websocket.Session;
 public class MainController {
 	@RequestMapping("/")
 	public String index(HttpSession session) {
+		
 		if(session.getAttribute("goldCount") == null) {
 			session.setAttribute("goldCount",0);
 			session.setAttribute("goldLog",   new ArrayList<String>());
