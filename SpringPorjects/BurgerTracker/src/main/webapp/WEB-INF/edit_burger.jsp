@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-<!-- c:out ; c:forEach etc. -->
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- form:form -->
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- for rendering errors on PUT routes -->
 <%@ page isErrorPage="true"%>
@@ -12,40 +8,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Burger Tracker</title>
-<link rel="stylesheet" href="/css/style.css">
+<title>Edit Burger</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" >
+<link rel="stylesheet" href="/css/style1.css">
 </head>
 <body>
-
-
-	<div class="showtable">
-		
-		<h1>Burger Tracker</h1>
-		
-		<p class="success"><c:out value="${success}"/></p>
-		<table>
-			<thead>
-				<th>Burger Name</th>
-				<th>Restaurant Name</th>
-				<th>Rating</th>
-				<th>Action</th>
-			</thead>
-			<tbody>
-				<c:forEach var="myburger" items="${ burgers}">
-					<tr>
-						<td>${myburger.burgerName}</td>
-						<td>${myburger.restaurantName}</td>
-						<td>${myburger.rating}</td>
-						<td> <a href="/burgers/${myburger.id}/edit">Edit</a> </td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
-
-	<div class="addBook">
-		<h2>Add a Burger</h2>
-		<form:form action="/burger" method="post" modelAttribute="burger">
+	<header>
+		<h1>Edit Burger:</h1>
+		<div><a href="/"> Go Back </a></div>
+	</header>
+	
+	<div class="EditBook">
+		<form:form action="/burgers/${burger.id}" method="post" modelAttribute="burger">
+			 <input type="hidden" name="_method" value="put">
 			<p class="errors">
 				<form:errors path="burgerName"></form:errors>
 			</p>
@@ -80,9 +55,8 @@
 				<form:textarea path="note" />
 			</h4>
 				<button type="submit" class="mybtn">Add Burer</button>
+			
 		</form:form>
 	</div>
-
-
 </body>
 </html>

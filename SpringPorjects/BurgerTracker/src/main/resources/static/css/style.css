@@ -28,6 +28,9 @@ table{
 h1,h2{
 	color:#00488d;
 }
+.success{
+	color:#2ec27e ;
+}
 th{
 	background-color: grey ; 
 	color: white;
@@ -42,4 +45,8 @@ table,td,tr,th {
 	border-collapse: collapse;
 	
 	
+}
+
+a{
+	color: #1c71d8;
 }

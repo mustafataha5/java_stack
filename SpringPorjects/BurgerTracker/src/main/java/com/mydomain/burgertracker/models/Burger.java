@@ -33,13 +33,13 @@ public class Burger {
 	@Size(min=5,max=255)
 	private String restaurantName ; 
 	
-	@NotNull
+	@NotNull(message ="Must be number from 0-5")
 	@Min(value=0)
 	@Max(value=5)
 	private Integer rating ; 
 	
 	@NotNull
-	@Size(min=4,max=255)
+	@Size(min=4,max=255,message = "must be at least 4 characters")
 	private String note ; 
 	
 	@Column(updatable =false)
