@@ -1,0 +1,45 @@
+@charset "UTF-8";
+*{
+	font-family: sans-serif;
+}
+.showtable{
+	margin:30px auto ;
+	width: 60%;
+}
+.addBook{
+	margin:50px auto ;
+	width: 50%;
+	
+}
+.mybtn{
+	background-color:#00488d;
+	color: white;
+	border:1px solid black;
+	box-shadow: 3px 3px black; 
+}
+.errors{
+	color:#e01b24;
+	font-size: 12px;
+}
+
+table{
+	width: 100%
+}
+h1,h2{
+	color:#00488d;
+}
+th{
+	background-color: grey ; 
+	color: white;
+	padding: 3px 10px;
+}
+tr{
+	text-align: center;
+}
+
+table,td,tr,th {
+	border:1px solid black ;
+	border-collapse: collapse;
+	
+	
+}
