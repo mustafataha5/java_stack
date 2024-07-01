@@ -1,0 +1,17 @@
+
+
+
+.mycolor {
+	color:#07478c;/*#9800ff ;*/
+}
+.errors{
+	color:#e01b24 ; 
+	font-size: 11px;
+}
+
+.mybtn{
+	border:1px solid black ;
+	box-shadow: 3px 3px black ; 
+}
+
+
