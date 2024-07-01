@@ -3,6 +3,8 @@
 
 .mycolor {
 	color:#07478c;/*#9800ff ;*/
+ display: flex;
+ justify-content: space-between;
 }
 .errors{
 	color:#e01b24 ; 

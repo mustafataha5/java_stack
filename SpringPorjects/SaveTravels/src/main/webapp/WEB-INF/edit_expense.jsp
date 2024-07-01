@@ -11,58 +11,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Save Travels</title>
+<title>Edit Expense</title>
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
-
-	<div class="row mx-4 mt-3 d-flex justify-content-center ">
-		<div class="col-md-8 mx-5 p-4">
-			<div class="card border-primary">
-				<h1 class="card-title mx-4 mt-3 mycolor">Save Travels</h1>
-				<div class="card-body">
-					<table class="table ">
-						<thead class="table-primary">
-							<th>Expense</th>
-							<th>Vender</th>
-							<th>Amount</th>
-							<th >Action</th>
-
-						</thead>
-						<tbody class="table-light">
-							<c:forEach var="expense" items="${expenses}">
-								<tr>
-									<td><a href="/expense/${expense.id}">
-											${expense.expenseName}</a></td>
-									<td>${expense.vender}</td>
-									<td>${expense.amount}</td>
-									<td class="d-flex justify-content-center align-items-center">
-										<div><a href="/expense/edit/${expense.id}">Edit</a></div>
-										<form:form class="mx-2" action="/expense/delete/${expense.id}"
-											method="post">
-											<input type="hidden" name="_method" value="delete">
-											<input type="submit" class=" mybtn  btn btn-danger btn-sm"
-												value="Delete">
-										</form:form>
-									</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-
-				</div>
+	<div class="mx-5 d-flex justify-content-center">
+		<div
+			class=" w-75 mt-5 mx-5 d-flex justify-content-between align-items-center ">
+			<h1 class="card-title mx-5 mt-3 mycolor">Edit Expense</h1>
+			<div class=" mx-5 mt-3">
+				<a href="/expense">Go Back</a>
 			</div>
 		</div>
 	</div>
+
 	<div class="row mx-4 mt-1 d-flex justify-content-center ">
 		<div class="col-md-8 mx-5 p-4">
 			<div class="card border-primary">
-				<h3 class="card-title mx-4 mt-3 mycolor">Add New Expense</h3>
+
 				<div class="card-body">
-					<form:form action="/expense" method="post"
-						modelAttribute="newExpense">
+					<form:form action="/expense/edit/${updateExpense.id}" method="post" modelAttribute="updateExpense">
+						<input type="hidden" name="_method" value="put">
 						<p class="errors">
 							<form:errors path="expenseName"></form:errors>
 						</p>

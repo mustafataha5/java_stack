@@ -100,6 +100,10 @@ public class Expense {
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
 	
 	
 	
