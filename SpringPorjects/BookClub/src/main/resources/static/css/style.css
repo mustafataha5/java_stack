@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+
+.welcome{
+	color:#9900ff;
+}
+.error{
+	color: #ff2626;
+	font-size: 14px;
+}
+
+.line{
+ color:grey ;	
+}
+
+a{
+	color : #1c71d8 ;
+}
+
+.username{
+	color:#c01c28 ; 
+}
+
+.booktitle{
+	color: #9900ff;
+}
+.bookaothur{
+	color: #2ec27e;
+}
