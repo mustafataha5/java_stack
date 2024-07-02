@@ -2,12 +2,13 @@ package com.mydomain.authentication.models;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class LoginUser {
 
 	
-	@NotEmpty(message = "Email is required.")
+	@NotNull(message = "Email is required.")
 	@Email(message = "Please ,enter valid Email address.")
 	private String email;
 	
@@ -24,7 +25,7 @@ public class LoginUser {
 	}
 
 	public void setEmail(String email) {
-		email = email;
+		this.email = email;
 	}
 
 	public String getPassword() {
@@ -34,7 +35,6 @@ public class LoginUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 	
 	
 }

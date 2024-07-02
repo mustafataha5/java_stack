@@ -28,7 +28,7 @@
 		<h4 class="">Join our growing community</h4>
 	</div>
 
-
+	<p class="errors mx-5"> ${error}</p>
 	<div class="row mx-5">
 		<div class="col-md">
 			<div class="card p-3 border-dark h-100">
@@ -56,11 +56,11 @@
 							<tr>
 							<tr>
 								<td><form:label path="password">Password:</form:label></td>
-								<td><form:input path="password" /></td>
+								<td><form:input type="password" path="password" /></td>
 							<tr>
 							<tr>
 								<td><form:label path="">Confirm PW:</form:label></td>
-								<td><form:input path="" /></td>
+								<td><form:input type="password" path="confirmPassword" /></td>
 							<tr>
 							<tr>
 								<td></td>
@@ -78,8 +78,7 @@
 			<div class="card p-4 border-dark h-100">
 				<h2 class="card-title">Login</h2>
 				<div class="card-body">
-					<form:form action="/login" method="post"
-						modelAttribute="newLogin">
+					<form:form action="/login" method="post" modelAttribute="newLogin">
 						<p class="errors">
 							<form:errors path="email"></form:errors>
 						</p>
