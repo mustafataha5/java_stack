@@ -84,15 +84,19 @@ public class BookController {
 			redirectAttributes.addFlashAttribute("mustlogin", "Error:please login or registraion");
 			return "redirect:/";
 		}
+		
 		model.addAttribute("editBook",bookService.findBook(Id));
 		return "book/edit_book.jsp" ;
 	}
 	
 	@PutMapping("/books/{id}/edit")
-	public String editBook(@PathVariable("id")Long Id,@ModelAttribute("editBook")Book book ,Model model ,HttpSession session,RedirectAttributes redirectAttributes) {
+	public String editBook(@PathVariable("id")Long Id,@Valid @ModelAttribute("editBook")Book book ,BindingResult result ,Model model ,HttpSession session,RedirectAttributes redirectAttributes) {
 		if(session.getAttribute("userId") ==null) {
 			redirectAttributes.addFlashAttribute("mustlogin", "Error:please login or registraion");
 			return "redirect:/";
+		}
+		if(result.hasErrors()) {
+			return "book/edit_book.jsp" ;
 		}
 		model.addAttribute("editBook",bookService.updateBook(book));
 		return "redirect:/books/"+Id ;
