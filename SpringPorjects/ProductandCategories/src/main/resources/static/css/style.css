@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.mycolor{
+	color: #9800ff ;
+}
+
+a{
+	color:#1c71d8 ;
+}
+
+.myline{
+	color:#3d3846;
+	border: 4px soild #3d3846;
+}
+
+.success{
+	color:#2ec27e ;
+	font-size: 12px;
+}
+
+.list{
+	list-style-type: "-";
+}
+.error{
+	color:#c01c28; 
+	font-size: 12px;
+}
