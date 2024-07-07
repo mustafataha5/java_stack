@@ -37,7 +37,8 @@ public class BookController {
 		}
 		User user = userService.findUser( (Long) session.getAttribute("userId"));
 		model.addAttribute("user",  user);
-		model.addAttribute("books",bookService.AllBooks());
+		model.addAttribute("books",bookService.allBooksNotIn(user.getId()));
+		model.addAttribute("borrowBooks",user.getBorrowBooks());
 		return "home_page.jsp";
 	}
 	@GetMapping("/books/new")
@@ -87,6 +88,31 @@ public class BookController {
 		
 		model.addAttribute("editBook",bookService.findBook(Id));
 		return "book/edit_book.jsp" ;
+	}
+	@PostMapping("/books/{id}/borrow")
+	public String borrowBook(@PathVariable("id")Long Id,HttpSession session,RedirectAttributes redirectAttributes){
+		if(session.getAttribute("userId") ==null) {
+			redirectAttributes.addFlashAttribute("mustlogin", "Error:please login or registraion");
+			return "redirect:/books";
+		}
+		User user = userService.findUser((long) session.getAttribute("userId"));
+		Book book = bookService.findBook(Id);
+		book.setBorrower(user);
+		bookService.updateBook(book);
+		redirectAttributes.addFlashAttribute("success", "Successfully borrow book");
+		return "redirect:/books";
+	}
+	@DeleteMapping("/books/{id}/borrow")
+	public String delBorrowBook(@PathVariable("id")Long Id,HttpSession session,RedirectAttributes redirectAttributes){
+		if(session.getAttribute("userId") ==null) {
+			redirectAttributes.addFlashAttribute("mustlogin", "Error:please login or registraion");
+			return "redirect:/";
+		}
+		Book book = bookService.findBook(Id);
+		book.setBorrower(null);
+		bookService.updateBook(book);
+		redirectAttributes.addFlashAttribute("success", "Successfully: return book ");
+		return "redirect:/";
 	}
 	
 	@PutMapping("/books/{id}/edit")

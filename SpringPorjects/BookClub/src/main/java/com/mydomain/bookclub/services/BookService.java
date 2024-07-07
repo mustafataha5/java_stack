@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mydomain.bookclub.models.Book;
+import com.mydomain.bookclub.models.User;
 import com.mydomain.bookclub.repositories.BookRepository;
 
 @Service
@@ -40,9 +41,13 @@ public class BookService {
 		if(optional.isPresent()) {
 			return bookRepository.save(b);
 		}
-		return null ;
-		
-		
+		return null ;	
 	}
+	
+	
+	public List<Book> allBooksNotIn(Long id){
+		return bookRepository.findAllBooksnotincludebyuser(id);
+	}
+
 }
 

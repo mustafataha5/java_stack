@@ -18,117 +18,134 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table (name="users")
+@Table(name = "users")
 public class User {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
+	@NotEmpty(message = "User Name is Requierd")
+	@Size(min = 3, message = "User Name Must be at least 3 charachters")
+	private String userName;
 
-@NotNull
-@Size(min=3, message = "User Name Must be at least 3 charachters")
-private String userName;
+	@NotEmpty(message = "Email is Requierd")
+	@Email(message = "Invalid Email",regexp  = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
+	@Size(min = 6, message = "User Email Must be at least 3 charachters")
+	private String email;
 
-@NotNull
-@Email(message = "User Email Must be at least 3 charachters")
-private String email;
+	@NotEmpty(message = "Password is Requierd")
+	@Size(min = 8, max = 128, message = "User Password Must be at least 8 charachters")
+	private String password;
 
+	@Transient
+	@NotEmpty(message = "Confirm Password is Requierd")
+	@Size(min = 8, max = 128, message = "Confirm Password Must be at least 8 charachters")
+	private String ConfirmPassword;
 
-@NotNull(message = "Password is Requierd")
-@Size(min=8, max = 128, message = "User Password Must be at least 8 charachters")
-private String password;
+	@Column(updatable = false)
+	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	private Date createdAt;
 
-@Transient
-@NotNull(message = "Confirm Password is Requierd")
-@Size(min=8, max = 128, message = "Confirm Password Must be at least 8 charachters")
-private String ConfirmPassword;
+	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	private Date updatedAt;
 
-@Column(updatable = false)
-@DateTimeFormat(pattern = "yyyy-mm-dd")
-private Date createdAt ; 
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	private List<Book> books;
 
-@DateTimeFormat(pattern = "yyyy-mm-dd")
-private Date updatedAt ; 
+	@OneToMany(mappedBy = "borrower", fetch = FetchType.LAZY)
+	private List<Book> borrowBooks;
 
+	@PrePersist
+	public void onCreate() {
+		this.createdAt = new Date();
+	}
 
-@OneToMany(mappedBy ="user",fetch = FetchType.LAZY)
-private List<Book> books ;
+	@PreUpdate
+	public void onUpdate() {
+		this.updatedAt = new Date();
+	}
 
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 
-@PrePersist
-public void onCreate() {
-	this.createdAt = new Date();
-}
+	public Long getId() {
+		return id;
+	}
 
-@PreUpdate
-public void onUpdate() {
-	this.updatedAt = new Date();
-}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-public User() {
-	// TODO Auto-generated constructor stub
-}
+	public String getUserName() {
+		return userName;
+	}
 
-public Long getId() {
-	return id;
-}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
-public void setId(Long id) {
-	this.id = id;
-}
+	public String getEmail() {
+		return email;
+	}
 
-public String getUserName() {
-	return userName;
-}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-public void setUserName(String userName) {
-	this.userName = userName;
-}
+	public String getPassword() {
+		return password;
+	}
 
-public String getEmail() {
-	return email;
-}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-public void setEmail(String email) {
-	this.email = email;
-}
+	public String getConfirmPassword() {
+		return ConfirmPassword;
+	}
 
-public String getPassword() {
-	return password;
-}
+	public void setConfirmPassword(String confirmPassword) {
+		ConfirmPassword = confirmPassword;
+	}
 
-public void setPassword(String password) {
-	this.password = password;
-}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
 
-public String getConfirmPassword() {
-	return ConfirmPassword;
-}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 
-public void setConfirmPassword(String confirmPassword) {
-	ConfirmPassword = confirmPassword;
-}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
 
-public Date getCreatedAt() {
-	return createdAt;
-}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 
-public void setCreatedAt(Date createdAt) {
-	this.createdAt = createdAt;
-}
+	public List<Book> getBooks() {
+		return books;
+	}
 
-public Date getUpdatedAt() {
-	return updatedAt;
-}
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
 
-public void setUpdatedAt(Date updatedAt) {
-	this.updatedAt = updatedAt;
-}
+	public List<Book> getBorrowBooks() {
+		return borrowBooks;
+	}
 
-
+	public void setBorrowBooks(List<Book> borrowBooks) {
+		this.borrowBooks = borrowBooks;
+	}
+	
+	
 
 }

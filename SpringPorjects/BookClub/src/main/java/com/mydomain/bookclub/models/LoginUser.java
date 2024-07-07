@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 
 public class LoginUser {
 	 @NotEmpty(message="Email is required!")
-	    @Email(message="Please enter a valid email!")
+	    @Email(message="Please enter a valid email!",regexp  = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	    private String email;
 	    
 	    @NotEmpty(message="Password is required!")

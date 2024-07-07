@@ -8,7 +8,11 @@
 	color: #ff2626;
 	font-size: 14px;
 }
-
+.success{
+	color: #1c71d8;
+	font-size: 14px;
+	
+}
 .line{
  color:grey ;	
 }
